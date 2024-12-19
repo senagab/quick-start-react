@@ -1,4 +1,5 @@
 import Perfil from "./components/Perfil";
+import Formulario from "./components/Formulario";
 
 function App() {
 
@@ -6,7 +7,8 @@ function App() {
 
   return(
     <>
-      <Perfil/>
+      <Perfil nome="megazord" endereco="https://github.com/senagab.png"/>
+      <Formulario />
     </>
   )
 
