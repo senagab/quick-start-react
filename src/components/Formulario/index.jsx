@@ -46,7 +46,14 @@ const Formulario = (props) => {
     }
 
     return (
-        <form action="">
+        <form>
+            <ul>
+                {['bianca', 'clarice', 'georgia', 'alan', 'andre'].map(item => (
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+            
+
             {/* a barra ao fim da tag input
             dá a entender que não havera conteudo de texto após input */}
             <input type="text" placeholder="Seu nome" onChange={alteraNome} />
