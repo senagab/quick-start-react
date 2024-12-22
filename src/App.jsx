@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import Perfil from "./components/Perfil";
-import Formulario from "./components/Formulario";
+// import Formulario from "./components/Formulario";
+import ReposList from "./components/ReposListIndex";
 
 function App() {
 
@@ -10,12 +11,12 @@ function App() {
   return(
     <>
       <Perfil nome="megazord" endereco="https://github.com/senagab.png"/>
-
-      {formularioEstaVisivel && (
+      <ReposList />
+      {/* {formularioEstaVisivel && (
         <Formulario />
       )}
       
-      <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type="button">togle form</button>
+      <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type="button">togle form</button> */}
     </>
   )
 
