@@ -16,8 +16,8 @@
 
 .itemLink {
     display: block;
-    background-color: red;
-    color: #fff;
+    background-color: var(--corPrincipal);
+    color: var(--corSecundaria);
     text-align: center;
     font-weight: bold;
     margin-top: 8px;
