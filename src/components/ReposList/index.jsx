@@ -6,8 +6,8 @@ const ReposList = () => {
     const [repos, setRepos] = useState([]);
     const [estaCarregando, setEstaCarregando] = useState(true);
 
-    useEffect(() => {
-        fetch('https://api.github.com/users/senagab/repos')
+    useEffect(({ nomeUsuario }) => {
+        fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
         .then(res => res.json())
         .then(resJson => {
             setTimeout(() => {
