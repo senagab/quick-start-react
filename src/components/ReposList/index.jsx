@@ -35,9 +35,9 @@ const ReposList = ({ nomeUsuario }) => {
     return (
         <div className="container">
             {estaCarregando ? (
-                <h1>Carregando...</h1>
+                <span className="loading">Carregando...</span>
             ) : erro ? (
-                <h1>O usuário {nomeUsuario} não foi encontrado.</h1>
+                <span className="loading">O usuário {nomeUsuario} não foi encontrado.</span>
             ) : (
                 <ul className={styles.list}>
                     {repos.length === 0 ? (

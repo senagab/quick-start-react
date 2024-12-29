@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    place-items: unset;
+}
+
 .container {
     max-width: 960px;
     width: 100%;

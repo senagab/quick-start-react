@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
+    text-align: center;
 }
 
 .listItem {
@@ -37,4 +38,8 @@
 
 .itemLink:hover {
     background-color: transparent;
+}
+
+span.loading {
+    font-size: 80px !important;
 }
