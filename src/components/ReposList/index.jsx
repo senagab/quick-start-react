@@ -11,7 +11,7 @@ const ReposList = ({ nomeUsuario }) => {
         setEstaCarregando(true);
         setErro(false); // Resetando erro a cada busca de usuário
 
-        fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
+        fetch(`https://api.github.com/users/${nomeUsuario}/repos?sort=updated`)
             .then((res) => {
                 if (!res.ok) {
                     // Se a resposta não for ok (status 404 ou outro), lançamos um erro
@@ -35,9 +35,9 @@ const ReposList = ({ nomeUsuario }) => {
     return (
         <div className="container">
             {estaCarregando ? (
-                <span className="loading">Carregando...</span>
+                <span className="loading">Carregando projetos...</span>
             ) : erro ? (
-                <span className="loading">O usuário {nomeUsuario} não foi encontrado.</span>
+                <span className="loading">O usuário <b>{nomeUsuario}</b> não foi encontrado.</span>
             ) : (
                 <ul className={styles.list}>
                     {repos.length === 0 ? (
@@ -46,10 +46,10 @@ const ReposList = ({ nomeUsuario }) => {
                         repos.map(({ id, name, language, html_url }) => (
                             <li className={styles.listItem} key={id}>
                                 <div className={styles.itemName}>
-                                    <b>Nome:</b> {name}
+                                    <b>"{name}"</b>
                                 </div>
                                 <div className={styles.itemLanguage}>
-                                    <b>Linguagem:</b> {language || "Não especificada"}
+                                    {language || "Linguagem não especificada"}
                                 </div>
                                 <a className={styles.itemLink} target="_blank" rel="noreferrer" href={html_url}>
                                     Visitar no Github
