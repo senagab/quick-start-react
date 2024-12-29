@@ -7,20 +7,34 @@
 .listItem {
     list-style: none;
     padding: 16px;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 2px solid rgba(0,0,0,0.1);
+    transition: border-color ease .5s, box-shadow ease .5s;
 }
 
-.itemName b, .itemLanguage {
+.listItem:hover {
+    border-color: var(--corPrincipal);
+    box-shadow: 0 0 15px 5px var(--corPrincipal);
+}
+
+.itemName b, .itemLanguage b {
     margin-right: 8px;
 }
 
 .itemLink {
+    text-decoration: none;
     display: block;
     background-color: var(--corPrincipal);
     color: var(--corSecundaria);
+    border: 2px solid var(--corPrincipal);
+    border-radius: 8px;
     text-align: center;
-    font-weight: bold;
     margin-top: 8px;
     padding: 8px;
-    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color ease .5s;
+}
+
+.itemLink:hover {
+    background-color: transparent;
 }

@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import Perfil from "./components/Perfil";
-// import Formulario from "./components/Formulario";
-import ReposList from "./components/ReposList";
+import Perfil from "./components/Perfil"
+import Formulario from "./components/Formulario"
+import ReposList from "./components/ReposList"
 
 function App() {
-
   const [formularioEstaVisivel, setFormularioEstaVisivel] = useState(true)
   const [nomeUsuario, setNomeUsuario] = useState('');
 
-  return(
+  return (
     <>
-    <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)}/>
-      
+      <div className="input">
+        <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} placeholder="Seu usuário no Github" />
+      </div>
       {nomeUsuario.length > 4 && (
         <>
-          <Perfil nomeUsuario={nomeUsuario}/>
+          <Perfil nomeUsuario={nomeUsuario} />
           <ReposList nomeUsuario={nomeUsuario} />
         </>
       )}
@@ -23,11 +23,9 @@ function App() {
       {/* {formularioEstaVisivel && (
         <Formulario />
       )}
-      
-      <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type="button">togle form</button> */}
+      <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type="button">Toggle form</button> */}
     </>
   )
-
 }
 
 export default App
